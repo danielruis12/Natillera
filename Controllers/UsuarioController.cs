@@ -18,5 +18,13 @@ namespace Natillera.Controllers
             Usuario.usuario = usuario;
             return Usuario.CrearUsuario(idPerfil);
         }
+        [HttpPut]
+        [Route("Actualizar")]
+        public string Actualizar([FromBody] Usuario usuario, int Perfil) 
+        {
+            clsUsuario Usuario = new clsUsuario(); 
+            Usuario.usuario = usuario;
+            return Usuario.Actualizar(Perfil);
+        }
     }
 }
