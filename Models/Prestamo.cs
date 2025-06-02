@@ -31,6 +31,7 @@ namespace Natillera.Models
 
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Liquidacion> Liquidacions { get; set; }
     }
 }
