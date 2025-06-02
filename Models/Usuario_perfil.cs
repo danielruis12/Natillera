@@ -22,6 +22,7 @@ namespace Natillera.Models
         [JsonIgnore]
 
         public virtual Perfil Perfil { get; set; }
+        [JsonIgnore]
         public virtual Usuario Usuario { get; set; }
     }
 }
