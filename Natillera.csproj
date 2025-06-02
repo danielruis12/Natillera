@@ -232,53 +232,53 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Ahorro.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBNatillera.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBNatillera.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBNatillera.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBNatillera.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBNatillera.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBNatillera.edmx</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento_Lugar.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\libLogin.cs" />
     <Compile Include="Models\Liquidacion.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lugar.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NatilleraDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NatilleraDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NatilleraDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NatilleraDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NatilleraDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Perfil.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Prestamo.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Proveedor.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario_perfil.cs">
-      <DependentUpon>DBNatillera.tt</DependentUpon>
+      <DependentUpon>NatilleraDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -302,15 +302,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DBNatillera.Context.tt">
+    <Content Include="Models\NatilleraDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBNatillera.edmx</DependentUpon>
-      <LastGenOutput>DBNatillera.Context.cs</LastGenOutput>
+      <DependentUpon>NatilleraDB.edmx</DependentUpon>
+      <LastGenOutput>NatilleraDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DBNatillera.tt">
+    <Content Include="Models\NatilleraDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBNatillera.edmx</DependentUpon>
-      <LastGenOutput>DBNatillera.cs</LastGenOutput>
+      <DependentUpon>NatilleraDB.edmx</DependentUpon>
+      <LastGenOutput>NatilleraDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -318,13 +318,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DBNatillera.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBNatillera.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBNatillera.edmx.diagram">
-      <DependentUpon>DBNatillera.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -344,6 +337,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\NatilleraDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NatilleraDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NatilleraDB.edmx.diagram">
+      <DependentUpon>NatilleraDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

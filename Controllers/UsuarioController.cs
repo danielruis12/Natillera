@@ -5,18 +5,28 @@ using System.Web.Http.Cors;
 
 namespace Natillera.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [AllowAnonymous]
+    [EnableCors(origins: "https://localhost:44378/", headers: "*", methods: "*")]
     [RoutePrefix("api/Usuarios")]
-    [Authorize]
     public class UsuarioController : ApiController
     {
+        
         [HttpPost]
-        [Route("CrearUsuario")]
+        [Route("Insertar")]
         public string CrearUsuario([FromBody] Usuario usuario, int idPerfil)
         {
             clsUsuario Usuario = new clsUsuario();
             Usuario.usuario = usuario;
             return Usuario.CrearUsuario(idPerfil);
+        }
+
+        [HttpPut]
+        [Route("Actualizar")]
+        public string Actualizar([FromBody] Usuario usuario, int Perfil) 
+        {
+            clsUsuario Usuario = new clsUsuario(); 
+            Usuario.usuario = usuario;
+            return Usuario.Actualizar(Perfil);
         }
     }
 }

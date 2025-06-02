@@ -12,7 +12,7 @@ namespace Natillera.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/Clientes")]
-    [Authorize]
+    //[Authorize]
     public class ClientesController : ApiController
     {
         [HttpGet]
