@@ -13,7 +13,6 @@ namespace Natillera
             // Configuración y servicios de Web API
             //Habilitar el esquema de autenticación, para la validación del token
             //config.MessageHandlers.Add(new TokenValidationHandler());
-            //Habilitar el cors
             config.EnableCors();
 
             // Rutas de Web API
