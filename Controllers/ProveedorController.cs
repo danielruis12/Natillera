@@ -24,7 +24,7 @@ namespace Natillera.Controllers
         }
 
         [HttpGet]
-        [Route("ConsultarxDocumento")]
+        [Route("Consultarxid")]
         public Proveedor ConsultarxId(int id)
         {
             clsProveedor proveedor = new clsProveedor();
@@ -40,6 +40,31 @@ namespace Natillera.Controllers
             return proveedor.Insertar();
         }
 
-        
+        [HttpPut]
+        [Route("Actualizar")]
+        public string Actualizar([FromBody] Proveedor proveedorParam)
+        {
+            clsProveedor proveedor = new clsProveedor();
+            proveedor.proveedor = proveedorParam;
+            return proveedor.Actualizar();
+        }
+
+        [HttpDelete]
+        [Route("Eliminar")]
+        public string Eliminar([FromBody] Proveedor proveedorParam)
+        {
+            clsProveedor proveedor = new clsProveedor();
+            proveedor.proveedor = proveedorParam;
+            return proveedor.Eliminar();
+        }
+
+        [HttpDelete]
+        [Route("Eliminarxid")]
+        public string EliminarxDocumento(int documento)
+        {
+            clsProveedor proveedor = new clsProveedor();
+            return proveedor.Eliminar(documento);
+        }
+
     }
 }
