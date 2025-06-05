@@ -13,6 +13,7 @@ namespace Natillera.Controllers
     [AllowAnonymous]
     public class LoginController : ApiController
     {
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
         [Route("Ingresar")]
         public IQueryable<LoginRespuesta> Ingresar([FromBody] Login login)
