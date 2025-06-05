@@ -26,5 +26,18 @@ namespace Natillera.Controllers
             Usuario.usuario = usuario;
             return Usuario.Actualizar(Perfil);
         }
+        [HttpDelete]
+        [Route("Eliminar")]
+        public IHttpActionResult Eliminar(int id)
+        {
+            clsUsuario Usuario = new clsUsuario();
+            string resultado = Usuario.EliminarUsuario(id);
+
+            if (resultado.Contains("correctamente"))
+                return Ok(resultado);
+            else
+                return BadRequest(resultado);
+        }
+
     }
 }

@@ -46,16 +46,13 @@ namespace Natillera.Clases
         {
             try
             {
-                // Buscar usuario existente
                 var usuarioExistente = dbNatillera.Usuarios.Find(usuario.id);
                 if (usuarioExistente == null)
                     return "Usuario no encontrado";
 
-                // 1. Actualizar datos básicos (excepto contraseña)
                 usuarioExistente.DocumentoEmpleado = usuario.DocumentoEmpleado;
                 usuarioExistente.userName = usuario.userName;
 
-                // 2. Si se envió nueva contraseña, cifrarla
                 if (!string.IsNullOrEmpty(usuario.Clave))
                 {
                     clsCypher cypher = new clsCypher();
@@ -67,7 +64,6 @@ namespace Natillera.Clases
                     usuarioExistente.Salt = cypher.Salt;
                 }
 
-                // 3. Actualizar perfil
                 var perfilExistente = dbNatillera.Usuario_perfil
                                         .FirstOrDefault(up =>
                                             up.idUsuario == usuario.id &&
@@ -75,11 +71,10 @@ namespace Natillera.Clases
 
                 if (perfilExistente != null)
                 {
-                    perfilExistente.idPerfil = Perfil; // Actualizar perfil existente
+                    perfilExistente.idPerfil = Perfil;
                 }
                 else
                 {
-                    // Crear nuevo perfil si no existe
                     dbNatillera.Usuario_perfil.Add(new Usuario_perfil
                     {
                         idUsuario = usuario.id,
@@ -96,5 +91,32 @@ namespace Natillera.Clases
                 return ex.Message;
             }
         }
+        public string EliminarUsuario(int idUsuario)
+        {
+            try
+            {
+                // En esta parte, se encarga de buscar el usuario
+                var usuarioExistente = dbNatillera.Usuarios.Find(idUsuario);
+                if (usuarioExistente == null)
+                    return "Usuario no encontrado";
+
+                // En esta parte elimina los perfiles asociados, en caso de ser necesario
+                var perfiles = dbNatillera.Usuario_perfil.Where(p => p.idUsuario == idUsuario).ToList();
+                foreach (var perfil in perfiles)
+                {
+                    dbNatillera.Usuario_perfil.Remove(perfil);
+                }
+
+                dbNatillera.Usuarios.Remove(usuarioExistente);
+                dbNatillera.SaveChanges();
+
+                return "Usuario eliminado correctamente";
+            }
+            catch (Exception ex)
+            {
+                return "Error al eliminar el usuario: " + ex.Message;
+            }
+        }
+
     }
 }
