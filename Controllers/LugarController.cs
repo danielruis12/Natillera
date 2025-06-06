@@ -36,7 +36,7 @@ namespace Natillera.Controllers
         public string Insertar([FromBody] Lugar LugarParam)
         {
             clsLugar Lugar = new clsLugar();
-            Lugar.Lugar = LugarParam;
+            Lugar.lugar = LugarParam;
             return Lugar.Insertar();
         }
 
@@ -45,7 +45,7 @@ namespace Natillera.Controllers
         public string Actualizar([FromBody] Lugar LugarParam)
         {
             clsLugar Lugar = new clsLugar();
-            Lugar.Lugar = LugarParam;
+            Lugar.lugar = LugarParam;
             return Lugar.Actualizar();
         }
 
@@ -54,7 +54,7 @@ namespace Natillera.Controllers
         public string Eliminar([FromBody] Lugar LugarParam)
         {
             clsLugar Lugar = new clsLugar();
-            Lugar.Lugar = LugarParam;
+            Lugar.lugar = LugarParam;
             return Lugar.Eliminar();
         }
 
