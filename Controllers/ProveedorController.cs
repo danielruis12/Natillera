@@ -60,10 +60,10 @@ namespace Natillera.Controllers
 
         [HttpDelete]
         [Route("Eliminarxid")]
-        public string EliminarxDocumento(int documento)
+        public string EliminarxId(int id)
         {
             clsProveedor proveedor = new clsProveedor();
-            return proveedor.Eliminar(documento);
+            return proveedor.Eliminar(id);
         }
 
     }
