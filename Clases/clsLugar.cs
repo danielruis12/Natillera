@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using Natillera.Models;
@@ -8,7 +9,7 @@ namespace Natillera.Clases
 {
     public class clsLugar
     {
-        private NatilleraDBEntities dbNatillera = new NatillerDBEntities();
+        private NatilleraDBEntities dbNatillera = new NatilleraDBEntities();
         public Lugar lugar { get; set; }
         public string Insertar()
         {
@@ -69,11 +70,11 @@ namespace Natillera.Clases
         {
             try
             {
-                lugar pro = Consultar(id);
+                Lugar pro = Consultar(id);
                 if (pro == null)
                     return "El lugar no existe";
 
-                dbNatillera.lugars.Remove(pro);
+                dbNatillera.Lugars.Remove(pro);
                 dbNatillera.SaveChanges();
                 return "lugar eliminado correctamente";
             }
