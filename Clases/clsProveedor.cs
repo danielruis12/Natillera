@@ -18,7 +18,7 @@ namespace Natillera.Clases
             {
                 dbNatillera.Proveedors.Add(proveedor);
                 dbNatillera.SaveChanges();
-                return "proveedor insertado correctamente";
+                return "Proveedor insertado correctamente";
             }
             catch (Exception ex)
             {
@@ -32,11 +32,11 @@ namespace Natillera.Clases
             {
                 Proveedor pro = Consultar(proveedor.id);
                 if (pro == null)
-                    return "El proveedor con el documento ingresado no existe";
+                    return "El proveedor con el id ingresado no existe";
 
                 dbNatillera.Proveedors.AddOrUpdate(proveedor);
                 dbNatillera.SaveChanges();
-                return "proveedor actualizado correctamente";
+                return "Proveedor actualizado correctamente";
             }
             catch (Exception ex)
             {
